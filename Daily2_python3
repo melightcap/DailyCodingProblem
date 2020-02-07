@@ -1,0 +1,17 @@
+##Given an array of integers, return a new array such that each element at index i of the new array is the product of all the numbers in the original array except the one at i.
+##For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
+
+def product(lst):
+    new = []
+    
+    for i in range(len(lst)):
+        result = 1
+        for item in lst:
+            if item != lst[i]:
+                result *= item
+        new.append(result)
+
+    return new
+
+print(product([1,2,3,4,5]))
+print(product([3,2,1]))
